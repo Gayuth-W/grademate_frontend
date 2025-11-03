@@ -1,0 +1,358 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GradeMate UI Design System - Modern Colorful Theme */
+
+@layer base {
+  :root {
+    /* Modern color palette */
+    --background: 240 100% 99%;           /* #fefbff - soft white */
+    --foreground: 231 48% 12%;            /* #0f1419 - deep blue-gray */
+    
+    /* Primary brand colors - Deep Blue */
+    --primary: 221 83% 53%;               /* #2563eb - vibrant blue */
+    --primary-foreground: 0 0% 100%;      /* #ffffff - white */
+    --primary-hover: 221 83% 45%;         /* #1d4ed8 - darker blue */
+    
+    /* Secondary colors - Light Blue */
+    --secondary: 214 95% 93%;             /* #dbeafe - light blue */
+    --secondary-foreground: 221 83% 53%;  /* #2563eb - blue text */
+    
+    /* Accent colors - Emerald Green */
+    --accent: 158 64% 52%;                /* #10b981 - emerald */
+    --accent-foreground: 0 0% 100%;       /* #ffffff - white */
+    
+    /* Success - Green */
+    --success: 142 71% 45%;               /* #059669 - green */
+    --success-foreground: 0 0% 100%;      /* #ffffff - white */
+    
+    /* Warning - Amber */
+    --warning: 45 93% 47%;                /* #f59e0b - amber */
+    --warning-foreground: 0 0% 100%;      /* #ffffff - white */
+    
+    /* Error/Destructive - Red */
+    --destructive: 0 72% 51%;             /* #dc2626 - red */
+    --destructive-foreground: 0 0% 100%;  /* #ffffff - white */
+    
+    /* Neutral grays */
+    --muted: 210 40% 96%;                 /* #f8fafc - very light gray */
+    --muted-foreground: 215 16% 47%;      /* #64748b - slate gray */
+    
+    /* Card and surface colors */
+    --card: 0 0% 100%;                    /* #ffffff - white */
+    --card-foreground: 231 48% 12%;       /* #0f1419 - dark text */
+    --card-border: 214 32% 91%;           /* #e2e8f0 - light border */
+    
+    /* Input and form colors */
+    --input: 0 0% 100%;                   /* #ffffff - white background */
+    --input-border: 214 32% 91%;          /* #e2e8f0 - light border */
+    --border: 214 32% 91%;                /* #e2e8f0 - general border */
+    
+    /* Focus and interaction */
+    --ring: 221 83% 53%;                  /* #2563eb - blue focus ring */
+    
+    /* Popover colors */
+    --popover: 0 0% 100%;                 /* #ffffff - white */
+    --popover-foreground: 231 48% 12%;    /* #0f1419 - dark text */
+    
+    /* Confidence level colors */
+    --confidence-high: 142 71% 45%;       /* #059669 - green for high confidence */
+    --confidence-medium: 45 93% 47%;      /* #f59e0b - amber for medium confidence */
+    --confidence-low: 0 72% 51%;          /* #dc2626 - red for low confidence */
+    
+    /* Gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(214, 95%, 93%), hsl(221, 83%, 53%));
+    --gradient-hero: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(262, 83%, 58%) 50%, hsl(158, 64%, 52%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-colored: 0 10px 25px -5px hsl(221, 83%, 53%, 0.3);
+    
+    /* Border radius */
+    --radius: 0.75rem;
+    
+    /* Animation timings */
+    --transition-fast: 150ms;
+    --transition-normal: 300ms;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme - Improved contrast and visibility */
+    --background: 220 13% 8%;              /* #13151a - dark background */
+    --foreground: 210 40% 98%;             /* #fafbfc - bright white text */
+    
+    /* Primary brand colors - Bright Blue with good contrast */
+    --primary: 217 91% 60%;                /* #3b82f6 - bright blue */
+    --primary-foreground: 220 13% 8%;      /* #13151a - dark text on primary */
+    --primary-hover: 217 91% 55%;          /* #2563eb - darker blue on hover */
+    
+    /* Secondary colors - Light background with dark text */
+    --secondary: 215 25% 20%;              /* #2a3441 - medium dark */
+    --secondary-foreground: 210 40% 98%;   /* #fafbfc - bright white text */
+    
+    /* Accent colors - Purple with good contrast */
+    --accent: 262 83% 65%;                 /* #a855f7 - brighter purple */
+    --accent-foreground: 220 13% 8%;       /* #13151a - dark text */
+    
+    /* Success - Bright emerald for visibility */
+    --success: 158 64% 55%;                /* #34d399 - brighter emerald */
+    --success-foreground: 220 13% 8%;      /* #13151a - dark text */
+    
+    /* Warning - Bright amber for visibility */
+    --warning: 45 93% 65%;                 /* #fcd34d - brighter amber */
+    --warning-foreground: 220 13% 8%;      /* #13151a - dark text */
+    
+    /* Error/Destructive - Bright red for visibility */
+    --destructive: 0 84% 60%;              /* #ef4444 - brighter red */
+    --destructive-foreground: 210 40% 98%; /* #fafbfc - white text */
+    
+    /* Neutral grays - Better contrast */
+    --muted: 215 25% 18%;                  /* #252a34 - lighter muted background */
+    --muted-foreground: 215 20% 75%;       /* #c1c7d1 - much lighter gray text */
+    
+    /* Card and surface colors - Better contrast */
+    --card: 220 13% 10%;                   /* #171920 - slightly lighter than background */
+    --card-foreground: 210 40% 98%;        /* #fafbfc - bright white text */
+    --card-border: 215 25% 25%;            /* #34404f - visible border */
+    
+    /* Input and form colors - Better visibility */
+    --input: 215 25% 15%;                  /* #1f2937 - dark input background */
+    --input-border: 215 25% 30%;           /* #475569 - visible border */
+    --border: 215 25% 25%;                 /* #34404f - general border */
+    
+    /* Focus and interaction */
+    --ring: 217 91% 60%;                   /* #3b82f6 - bright blue focus ring */
+    
+    /* Popover colors - Good contrast */
+    --popover: 220 13% 10%;                /* #171920 - dark popover background */
+    --popover-foreground: 210 40% 98%;     /* #fafbfc - bright white text */
+    
+    /* Confidence level colors - High contrast for dark theme */
+    --confidence-high: 158 64% 55%;        /* #34d399 - bright emerald */
+    --confidence-medium: 45 93% 65%;       /* #fcd34d - bright amber */
+    --confidence-low: 0 84% 60%;           /* #ef4444 - bright red */
+    
+    /* Sidebar colors - Consistent with theme */
+    --sidebar-background: 220 13% 8%;      /* #13151a - same as background */
+    --sidebar-foreground: 210 40% 98%;     /* #fafbfc - bright white text */
+    --sidebar-primary: 217 91% 60%;        /* #3b82f6 - bright blue */
+    --sidebar-primary-foreground: 220 13% 8%; /* #13151a - dark text */
+    --sidebar-accent: 215 25% 18%;         /* #252a34 - muted accent */
+    --sidebar-accent-foreground: 210 40% 98%; /* #fafbfc - bright white text */
+    --sidebar-border: 215 25% 25%;         /* #34404f - visible border */
+    --sidebar-ring: 217 91% 60%;           /* #3b82f6 - blue ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, hsl(240, 100%, 99%) 0%, hsl(214, 95%, 98%) 100%);
+  }
+
+  /* Focus rings for accessibility */
+  .focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn var(--transition-normal) ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp var(--transition-normal) ease-out;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Confidence indicator patterns */
+  .confidence-high {
+    @apply bg-success text-success-foreground shadow-sm;
+  }
+
+  .confidence-medium {
+    @apply bg-warning text-warning-foreground shadow-sm;
+  }
+
+  .confidence-low {
+    @apply bg-destructive text-destructive-foreground shadow-sm;
+  }
+}
+
+@layer components {
+  /* Custom button variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold rounded-xl;
+    @apply hover:bg-primary-hover transition-all duration-300 transform hover:scale-105;
+    @apply shadow-lg hover:shadow-colored;
+    @apply focus-visible;
+    background: var(--gradient-primary);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 font-medium rounded-lg;
+    @apply border border-primary/20 hover:bg-primary/5 hover:border-primary/30;
+    @apply transition-all duration-200 hover:shadow-md;
+    @apply focus-visible;
+  }
+
+  .btn-tertiary {
+    @apply text-primary px-4 py-2 font-medium rounded-lg;
+    @apply hover:bg-primary/5 transition-all duration-200;
+    @apply focus-visible;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-card border border-card-border rounded-xl shadow-sm;
+    @apply hover:shadow-md transition-shadow duration-200;
+  }
+
+  .card-elevated {
+    @apply bg-card border border-card-border rounded-xl shadow-lg;
+    @apply hover:shadow-xl transition-shadow duration-300;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced animations for student view */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Smooth transitions for enhanced UX */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Enhanced focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Loading states */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
